@@ -1,7 +1,7 @@
 import client.Client;
-import server.Server;
 import java.io.IOException;
 import java.util.Scanner;
+import server.Server;
 
 public class Main {
 
@@ -9,10 +9,8 @@ public class Main {
     Client client = new Client();
     client.startConnection(Server.IP, Server.PORT);
 
-    System.out.println(client.sendMessage("check"));
-
     Scanner sc = new Scanner(System.in);
-    while(true){
+    while (true) {
       System.out.println(client.sendMessage(sc.nextLine()));
     }
   }

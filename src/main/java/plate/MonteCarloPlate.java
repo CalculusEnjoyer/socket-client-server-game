@@ -2,8 +2,13 @@ package plate;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class MonteCarloPlate {
+
   private int width;
   private int height;
   List<List<Boolean>> table = new ArrayList<>();
@@ -26,7 +31,23 @@ public class MonteCarloPlate {
     this.table = table;
   }
 
-  public boolean isExist (int x, int y){
+  public boolean isExist(int x, int y) {
     return table.get(y).get(x);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (List<Boolean> row: table) {
+      for(Boolean value: row){
+        if(value == true){
+          sb.append('*');
+        } else{
+          sb.append('-');
+        }
+      }
+      sb.append('\n');
+    }
+    return sb.toString();
   }
 }
