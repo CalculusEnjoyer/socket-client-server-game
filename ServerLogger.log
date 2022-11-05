@@ -1,0 +1,60 @@
+Nov 06, 2022 12:56:36 AM server.Server start
+INFO: Starting server...
+Nov 06, 2022 12:56:36 AM server.Server start
+INFO: Showing initial table: 
+*-*---
+-***-*
+*--*-*
+*--*-*
+---*-*
+-----*
+
+Nov 06, 2022 12:56:51 AM server.Server start
+INFO: Client is connected.
+Nov 06, 2022 12:57:07 AM server.Server start
+INFO: Receiving message: sho
+Nov 06, 2022 12:57:07 AM server.Server start
+INFO: Sending message: This command do not exist
+Nov 06, 2022 12:57:08 AM server.Server start
+INFO: Receiving message: who
+Nov 06, 2022 12:57:08 AM server.Server start
+INFO: Sending message: Volodymyr Kravchuk, group K-26, variant #27 (guessing points on the place using Monte Carlo method)
+Nov 06, 2022 12:57:25 AM server.Server start
+INFO: Receiving message: help
+Nov 06, 2022 12:57:25 AM server.Server start
+INFO: Sending message: To guess the point you should type command "guess" 
+and the coordinates of the points in the following format:
+guess (x;y)
+where x and y are int or double values.
+If it will be in point range of the point that exists server will return
+conformation of guessing and client will update its table.
+Nov 06, 2022 12:57:33 AM server.Server start
+INFO: Receiving message: start-guessing
+Nov 06, 2022 12:57:33 AM server.Server start
+INFO: Sending message: Guessing is started. You have 5 attempts left
+Nov 06, 2022 12:57:51 AM server.Server start
+INFO: Receiving message: guess (1;4)
+Nov 06, 2022 12:57:51 AM server.Server start
+INFO: Sending message: POINT DOES NOT EXIST
+------
+------
+------
+------
+------
+------
+You have 4 more attempts to guess
+Nov 06, 2022 12:57:56 AM server.Server start
+INFO: Receiving message: guess (3;1)
+Nov 06, 2022 12:57:56 AM server.Server start
+INFO: Sending message: POINT EXIST
+------
+---*--
+------
+------
+------
+------
+You have 3 more attempts to guess
+Nov 06, 2022 12:59:12 AM server.Server start
+INFO: Receiving message: guess (12;12
+Nov 06, 2022 12:59:12 AM server.Server start
+INFO: Sending message: Wrong command syntax error. Command "help" to get help;

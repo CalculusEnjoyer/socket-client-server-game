@@ -38,11 +38,11 @@ public class MonteCarloPlate {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    for (List<Boolean> row: table) {
-      for(Boolean value: row){
-        if(value == true){
+    for (List<Boolean> row : table) {
+      for (Boolean value : row) {
+        if (value == true) {
           sb.append('*');
-        } else{
+        } else {
           sb.append('-');
         }
       }

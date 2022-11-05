@@ -7,6 +7,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 import plate.MonteCarloPlate;
 
 public class Server {
@@ -19,27 +23,44 @@ public class Server {
   private Socket clientSocket;
   private DataOutputStream out;
   private DataInputStream in;
+  private final String LOG_PATH = "C:\\Users\\Lenovo\\Desktop\\java-intelli\\KN-SOCKETS\\ServerLogger.log";
+  Logger logger = Logger.getLogger("ServerLogger");
+  FileHandler fh;
 
   public Server(CommandParser commandParser) {
     this.commandParser = commandParser;
   }
 
   public void start(int port) throws IOException {
+    fh = new FileHandler(LOG_PATH);
+    logger.addHandler(fh);
+    logger.setUseParentHandlers(false);
+    SimpleFormatter formatter = new SimpleFormatter();
+    fh.setFormatter(formatter);
+
+    logger.log(Level.INFO, "Starting server...");
+    logger.log(Level.INFO, "Showing initial table: \n{0}", commandParser.getPlate().toString());
     System.out.println("Initial figure:\n" + commandParser.getPlate().toString());
     serverSocket = new ServerSocket(port);
     clientSocket = serverSocket.accept();
+    logger.log(Level.INFO, "Client is connected.");
     out = new DataOutputStream(clientSocket.getOutputStream());
     in = new DataInputStream(clientSocket.getInputStream());
+
     String inputLine;
     while ((inputLine = in.readUTF()) != null) {
       if (CLOSING_COMMAND.equals(inputLine)) {
         out.writeUTF("Closing sockets.");
         out.flush();
+        logger.log(Level.INFO, "Closing sockets.");
         clientSocket.close();
         serverSocket.close();
       }
-      out.writeUTF(this.commandParser.parseCommand(inputLine));
+      logger.log(Level.INFO, "Receiving message: {0}", inputLine);
+      String response = this.commandParser.parseCommand(inputLine);
+      out.writeUTF(response);
       out.flush();
+      logger.log(Level.INFO, "Sending message: {0}", response);
     }
   }
 

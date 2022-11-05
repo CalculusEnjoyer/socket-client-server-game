@@ -1,7 +1,6 @@
 package server;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 import lombok.Getter;
 import plate.MonteCarloPlate;
@@ -27,8 +26,8 @@ public class CommandParser {
           + "If it will be in point range of the point that exists server will return\n"
           + "conformation of guessing and client will update its table.";
 
-  public static final String COMMAND_DO_NOT_EXIST = "This command do not exist";
-  public static final String WRONG_COMMAND_FORMAT = "Wrong command syntax error. Command \"help\" to get help;";
+  public static final String COMMAND_DO_NOT_EXIST = "This command do not exist.";
+  public static final String WRONG_COMMAND_FORMAT = "Wrong command syntax error. Command \"help\" to get help.";
 
   public static final String START_GUESSING =
       "Guessing is started. You have " + startingAttempts + " attempts left";
@@ -57,7 +56,7 @@ public class CommandParser {
   private String guessCommandParser(String command) {
     command = command.substring(command.indexOf(' ') + 1);
     if (POINT_PATTERN.matcher(command).matches()) {
-      if(attemptsLeft<=0){
+      if (attemptsLeft <= 0) {
         return "You have no attempts left. \"start-guessing\" to begin guessing again";
       }
       StringBuilder result = new StringBuilder();
@@ -66,14 +65,12 @@ public class CommandParser {
           command.substring(command.indexOf(';') + 1, command.length() - 1));
       if (isInExistingPointRange(x, y)) {
         guessingPlate.getTable().get((int) Math.floor(y)).set((int) Math.floor(x), true);
-        result.append("POINT EXIST\n" +
-            guessingPlate.toString());
+        result.append("POINT EXIST\n").append(guessingPlate.toString());
       } else {
-        result.append("POINT DOES NOT EXIST\n"+
-            guessingPlate.toString());
+        result.append("POINT DOES NOT EXIST\n").append(guessingPlate.toString());
       }
-      result.append("You have " + attemptsLeft + " more attempts to guess");
       attemptsLeft--;
+      result.append("You have ").append(attemptsLeft).append(" more attempts to guess");
       return result.toString();
     } else {
       return WRONG_COMMAND_FORMAT;

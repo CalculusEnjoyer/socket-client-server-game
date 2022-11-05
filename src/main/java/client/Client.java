@@ -21,6 +21,7 @@ public class Client {
     clientSocket = new Socket(ip, port);
     out = new DataOutputStream(clientSocket.getOutputStream());
     in = new DataInputStream(clientSocket.getInputStream());
+
     fh = new FileHandler(LOG_PATH);
     logger.addHandler(fh);
     logger.setUseParentHandlers(false);
@@ -37,7 +38,7 @@ public class Client {
     sb.append(line);
     try {
       logger.info(msg);
-      logger.info(line);
+      logger.info("Received message: " + line);
     } catch (SecurityException e) {
       e.printStackTrace();
     }
