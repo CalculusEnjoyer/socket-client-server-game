@@ -1,5 +1,5 @@
-import Client.Client;
-import Server.Server;
+import client.Client;
+import server.Server;
 import java.io.IOException;
 import java.util.Scanner;
 
