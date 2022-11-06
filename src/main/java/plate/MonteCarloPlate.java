@@ -32,6 +32,9 @@ public class MonteCarloPlate {
   }
 
   public boolean isExist(int x, int y) {
+    if (x > width || y > height || x < 0 || y < 0) {
+      return false;
+    }
     return table.get(y).get(x);
   }
 

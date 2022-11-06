@@ -19,12 +19,21 @@ public class CommandParser {
       + "(guessing points on the place using Monte Carlo method)";
 
   public static final String HELP =
-      "To guess the point you should type command \"guess\" \n"
-          + "and the coordinates of the points in the following format:\n"
+      "Hello! This is Monte Carlo guessing game. Here some main commands:\n"
+          + "\n"
+          + "who\n"
+          + "\tShows info about the author and the programm\n"
+          + "help\n"
+          + "\tShows this message\n"
+          + "start-guessing\n"
+          + "\tStarts guessing of points that are stored on server\n"
           + "guess (x;y)\n"
-          + "where x and y are int or double values.\n"
-          + "If it will be in point range of the point that exists server will return\n"
-          + "conformation of guessing and client will update its table.";
+          + "\tGuesses if poit x;y (where x and y are doubles or integers) is stored of server and \n"
+          + "\treturn plate of already guessed points.\n"
+          + "stop-guessing\n"
+          + "\tStops guessing, resets numbers of attemps and resets plate of guessed points\n"
+          + "stop-server\n"
+          + "\tStops server and closes all connections\n";
 
   public static final String COMMAND_DO_NOT_EXIST = "This command do not exist.";
   public static final String WRONG_COMMAND_FORMAT = "Wrong command syntax error. Command \"help\" to get help.";
@@ -32,15 +41,12 @@ public class CommandParser {
   public static final String START_GUESSING =
       "Guessing is started. You have " + startingAttempts + " attempts left";
 
+  public static final String STOP_GUESSING = "Guessing is stopped. Guessing plate has been reset. "
+      + "Command \"start-guessing\" to start guess again.";
+
   public CommandParser(MonteCarloPlate plate) {
     this.plate = plate;
-    this.guessingPlate = new MonteCarloPlate(plate.getWidth(), plate.getHeight());
-    for (int i = 0; i < plate.getHeight(); i++) {
-      guessingPlate.getTable().add(new ArrayList<Boolean>());
-      for (int j = 0; j < plate.getHeight(); j++) {
-        guessingPlate.getTable().get(i).add(false);
-      }
-    }
+    resetGuessingPlate();
   }
 
   public String parseCommand(String command) {
@@ -48,6 +54,7 @@ public class CommandParser {
       case "who" -> WHO;
       case "help" -> HELP;
       case "start-guessing" -> startGuessingCommand();
+      case "stop-guessing" -> stopGuessingCommand();
       case "guess" -> guessCommandParser(command);
       default -> COMMAND_DO_NOT_EXIST;
     };
@@ -79,14 +86,24 @@ public class CommandParser {
 
   private String startGuessingCommand() {
     attemptsLeft = startingAttempts;
+    resetGuessingPlate();
+    return START_GUESSING;
+  }
+
+  private String stopGuessingCommand() {
+    attemptsLeft = 0;
+    resetGuessingPlate();
+    return START_GUESSING;
+  }
+
+  private void resetGuessingPlate() {
     this.guessingPlate = new MonteCarloPlate(plate.getWidth(), plate.getHeight());
     for (int i = 0; i < plate.getHeight(); i++) {
-      guessingPlate.getTable().add(new ArrayList<Boolean>());
+      guessingPlate.getTable().add(new ArrayList<>());
       for (int j = 0; j < plate.getHeight(); j++) {
         guessingPlate.getTable().get(i).add(false);
       }
     }
-    return START_GUESSING;
   }
 
   private boolean isInExistingPointRange(double x, double y) {

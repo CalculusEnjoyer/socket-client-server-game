@@ -1,5 +1,6 @@
 package server;
 
+import client.Client;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class Server {
   public static final int PORT = 1025 + 27;
   public static final String CLOSING_COMMAND = "stop-server";
   private final CommandParser commandParser;
+  private final String GREETING_MESSAGE = CommandParser.HELP;
   private ServerSocket serverSocket;
   private Socket clientSocket;
   private DataOutputStream out;
@@ -47,6 +49,9 @@ public class Server {
     out = new DataOutputStream(clientSocket.getOutputStream());
     in = new DataInputStream(clientSocket.getInputStream());
 
+    out.writeUTF(GREETING_MESSAGE);
+    out.flush();
+    logger.log(Level.INFO, "Sending greeting message...");
     String inputLine;
     while ((inputLine = in.readUTF()) != null) {
       if (CLOSING_COMMAND.equals(inputLine)) {
@@ -67,6 +72,7 @@ public class Server {
   public static void main(String[] args) throws IOException {
     MonteCarloPlate plate = new MonteCarloPlate(6, 6);
     List row1 = new ArrayList<Boolean>();
+
     row1.add(true);
     row1.add(false);
     row1.add(true);
