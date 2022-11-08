@@ -1,6 +1,5 @@
 package server;
 
-import client.Client;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -43,6 +42,7 @@ public class Server {
     logger.log(Level.INFO, "Starting server...");
     logger.log(Level.INFO, "Showing initial table: \n{0}", commandParser.getPlate().toString());
     System.out.println("Initial figure:\n" + commandParser.getPlate().toString());
+
     serverSocket = new ServerSocket(port);
     clientSocket = serverSocket.accept();
     logger.log(Level.INFO, "Client is connected.");
@@ -54,14 +54,17 @@ public class Server {
     logger.log(Level.INFO, "Sending greeting message...");
     String inputLine;
     while ((inputLine = in.readUTF()) != null) {
+      logger.log(Level.INFO, "Received message: {0}", inputLine);
       if (CLOSING_COMMAND.equals(inputLine)) {
         out.writeUTF("Closing sockets.");
         out.flush();
         logger.log(Level.INFO, "Closing sockets.");
+        in.close();
+        out.close();
         clientSocket.close();
         serverSocket.close();
+        break;
       }
-      logger.log(Level.INFO, "Receiving message: {0}", inputLine);
       String response = this.commandParser.parseCommand(inputLine);
       out.writeUTF(response);
       out.flush();
@@ -73,9 +76,9 @@ public class Server {
     MonteCarloPlate plate = new MonteCarloPlate(6, 6);
     List row1 = new ArrayList<Boolean>();
 
-    row1.add(true);
     row1.add(false);
-    row1.add(true);
+    row1.add(false);
+    row1.add(false);
     row1.add(false);
     row1.add(false);
     row1.add(false);
@@ -84,33 +87,33 @@ public class Server {
     row2.add(false);
     row2.add(true);
     row2.add(true);
-    row2.add(true);
     row2.add(false);
-    row2.add(true);
+    row2.add(false);
+    row2.add(false);
 
     List row3 = new ArrayList<Boolean>();
+    row3.add(false);
+    row3.add(true);
+    row3.add(true);
     row3.add(true);
     row3.add(false);
     row3.add(false);
-    row3.add(true);
-    row3.add(false);
-    row3.add(true);
 
     List row4 = new ArrayList<Boolean>();
-    row4.add(true);
-    row4.add(false);
     row4.add(false);
     row4.add(true);
-    row4.add(false);
     row4.add(true);
+    row4.add(true);
+    row4.add(true);
+    row4.add(false);
 
     List row5 = new ArrayList<Boolean>();
     row5.add(false);
     row5.add(false);
     row5.add(false);
-    row5.add(true);
     row5.add(false);
-    row5.add(true);
+    row5.add(false);
+    row5.add(false);
 
     List row6 = new ArrayList<Boolean>();
     row6.add(false);
@@ -118,7 +121,7 @@ public class Server {
     row6.add(false);
     row6.add(false);
     row6.add(false);
-    row6.add(true);
+    row6.add(false);
 
     List table = new ArrayList<List>();
     table.add(row1);

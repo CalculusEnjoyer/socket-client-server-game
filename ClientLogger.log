@@ -1,2 +1,10 @@
-Nov 06, 2022 1:41:19 AM client.Client startConnection
-INFO: Connecting to server...
+Nov 08, 2022 12:51:15 PM client.Client startConnection
+INFO: Connected to server
+Nov 08, 2022 12:55:22 PM client.Client sendMessage
+INFO: Sent message: start-guessing
+Nov 08, 2022 12:55:22 PM client.Client sendMessage
+INFO: Received message: Guessing is started. You have 5 attempts left
+Nov 08, 2022 12:55:50 PM client.Client sendMessage
+INFO: Sent message: guess (123213)
+Nov 08, 2022 12:55:50 PM client.Client sendMessage
+INFO: Received message: Wrong command syntax error. Command "help" to get help.

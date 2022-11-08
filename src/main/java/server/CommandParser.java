@@ -32,6 +32,8 @@ public class CommandParser {
           + "\treturn plate of already guessed points.\n"
           + "stop-guessing\n"
           + "\tStops guessing, resets numbers of attemps and resets plate of guessed points\n"
+          + "disconnect-from-server\n"
+          + "\tDisconnects from server\n"
           + "stop-server\n"
           + "\tStops server and closes all connections\n";
 
@@ -93,7 +95,7 @@ public class CommandParser {
   private String stopGuessingCommand() {
     attemptsLeft = 0;
     resetGuessingPlate();
-    return START_GUESSING;
+    return STOP_GUESSING;
   }
 
   private void resetGuessingPlate() {
