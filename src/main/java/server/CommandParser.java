@@ -10,7 +10,7 @@ public class CommandParser {
 
   private MonteCarloPlate plate;
   private MonteCarloPlate guessingPlate;
-  public final static Integer startingAttempts = 5;
+  public final static Integer startingAttempts = 15;
   private int attemptsLeft = 0;
   public static final Pattern POINT_PATTERN = Pattern.compile(
       "[(][0-9]{1,13}(.[0-9]*)?;[0-9]{1,13}(.[0-9]*)?[)]");
@@ -30,6 +30,8 @@ public class CommandParser {
           + "guess (x;y)\n"
           + "\tGuesses if poit x;y (where x and y are doubles or integers) is stored of server and \n"
           + "\treturn plate of already guessed points.\n"
+          + "monte-guess\n"
+          + "\tRandomly generates point to guess\n"
           + "stop-guessing\n"
           + "\tStops guessing, resets numbers of attemps and resets plate of guessed points\n"
           + "disconnect-from-server\n"
@@ -58,6 +60,7 @@ public class CommandParser {
       case "start-guessing" -> startGuessingCommand();
       case "stop-guessing" -> stopGuessingCommand();
       case "guess" -> guessCommandParser(command);
+      case "monte-guess" -> guessCommandParser(generateMonteGuessCommand());
       default -> COMMAND_DO_NOT_EXIST;
     };
   }
@@ -74,9 +77,9 @@ public class CommandParser {
           command.substring(command.indexOf(';') + 1, command.length() - 1));
       if (isInExistingPointRange(x, y)) {
         guessingPlate.getTable().get((int) Math.floor(y)).set((int) Math.floor(x), true);
-        result.append("POINT EXIST\n").append(guessingPlate.toString());
+        result.append("POINT " + command + " EXIST\n").append(guessingPlate.toString());
       } else {
-        result.append("POINT DOES NOT EXIST\n").append(guessingPlate.toString());
+        result.append("POINT " + command + " DOES NOT EXIST\n").append(guessingPlate.toString());
       }
       attemptsLeft--;
       result.append("You have ").append(attemptsLeft).append(" more attempts to guess");
@@ -110,5 +113,11 @@ public class CommandParser {
 
   private boolean isInExistingPointRange(double x, double y) {
     return plate.isExist((int) Math.floor(x), (int) Math.floor(y));
+  }
+
+  private String generateMonteGuessCommand() {
+    double x = Math.random() * getGuessingPlate().getWidth() % getGuessingPlate().getWidth();
+    double y = Math.random() * getGuessingPlate().getHeight() % getGuessingPlate().getWidth();
+    return "guess (" + x + ";" + y + ")";
   }
 }
