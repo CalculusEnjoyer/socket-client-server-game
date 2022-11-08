@@ -116,8 +116,8 @@ public class CommandParser {
   }
 
   private String generateMonteGuessCommand() {
-    double x = Math.random() * getGuessingPlate().getWidth() % getGuessingPlate().getWidth();
-    double y = Math.random() * getGuessingPlate().getHeight() % getGuessingPlate().getWidth();
+    double x = Math.random() * getGuessingPlate().getWidth();
+    double y = Math.random() * getGuessingPlate().getHeight();
     return "guess (" + x + ";" + y + ")";
   }
 }
