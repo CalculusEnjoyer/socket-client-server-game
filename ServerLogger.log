@@ -1,6 +1,6 @@
-Nov 08, 2022 1:58:25 PM server.Server start
+Nov 09, 2022 1:18:00 AM server.Server start
 INFO: Starting server...
-Nov 08, 2022 1:58:25 PM server.Server start
+Nov 09, 2022 1:18:00 AM server.Server start
 INFO: Showing initial table: 
 ------
 -**---
@@ -9,192 +9,413 @@ INFO: Showing initial table:
 ------
 ------
 
-Nov 08, 2022 1:58:30 PM server.Server start
+Nov 09, 2022 1:18:04 AM server.Server start
 INFO: Client is connected.
-Nov 08, 2022 1:58:30 PM server.Server start
+Nov 09, 2022 1:18:04 AM server.Server start
 INFO: Sending greeting message...
-Nov 08, 2022 1:58:35 PM server.Server start
+Nov 09, 2022 1:18:09 AM server.Server start
 INFO: Received message: start-guessing
-Nov 08, 2022 1:58:35 PM server.Server start
-INFO: Sending message: Guessing is started. You have 15 attempts left
-Nov 08, 2022 1:58:39 PM server.Server start
+Nov 09, 2022 1:18:09 AM server.Server start
+INFO: Sending message: Guessing is started. You have 55 attempts left
+Nov 09, 2022 1:18:14 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:39 PM server.Server start
-INFO: Sending message: POINT (4.484831450597561;5.655768016535221) DOES NOT EXIST
+Nov 09, 2022 1:18:14 AM server.Server start
+INFO: Sending message: POINT (2.327758430086698;0.045772314210715814) DOES NOT EXIST
+--#---
 ------
 ------
 ------
 ------
 ------
-------
-You have 14 more attempts to guess
-Nov 08, 2022 1:58:40 PM server.Server start
+You have 54 more attempts to guess
+Nov 09, 2022 1:18:15 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:40 PM server.Server start
-INFO: Sending message: POINT (0.35313217420230814;3.9961169297466355) DOES NOT EXIST
+Nov 09, 2022 1:18:15 AM server.Server start
+INFO: Sending message: POINT (5.619590031868346;3.16895972080954) DOES NOT EXIST
+--#---
 ------
 ------
+-----#
 ------
 ------
-------
-------
-You have 13 more attempts to guess
-Nov 08, 2022 1:58:41 PM server.Server start
+You have 53 more attempts to guess
+Nov 09, 2022 1:18:16 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:41 PM server.Server start
-INFO: Sending message: POINT (5.434971332061261;0.21546829477066565) DOES NOT EXIST
+Nov 09, 2022 1:18:16 AM server.Server start
+INFO: Sending message: POINT (0.5924213603378092;4.7247415015043455) DOES NOT EXIST
+--#---
 ------
 ------
+-----#
+#-----
 ------
-------
-------
-------
-You have 12 more attempts to guess
-Nov 08, 2022 1:58:42 PM server.Server start
+You have 52 more attempts to guess
+Nov 09, 2022 1:18:19 AM server.Server start
+INFO: Received message: monte-guessmonte-guess
+Nov 09, 2022 1:18:19 AM server.Server start
+INFO: Sending message: This command do not exist.
+Nov 09, 2022 1:18:20 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:42 PM server.Server start
-INFO: Sending message: POINT (4.6904064614452885;0.7913437555423675) DOES NOT EXIST
+Nov 09, 2022 1:18:20 AM server.Server start
+INFO: Sending message: POINT (1.9432325374941481;2.1453732636850225) EXIST
+--#---
 ------
+-*----
+-----#
+#-----
 ------
-------
-------
-------
-------
-You have 11 more attempts to guess
-Nov 08, 2022 1:58:43 PM server.Server start
+You have 51 more attempts to guess
+Nov 09, 2022 1:18:21 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:43 PM server.Server start
-INFO: Sending message: POINT (2.732641654737771;5.401508826410211) DOES NOT EXIST
+Nov 09, 2022 1:18:21 AM server.Server start
+INFO: Sending message: POINT (3.6946811783059315;2.114507981472918) EXIST
+--#---
 ------
+-*-*--
+-----#
+#-----
 ------
-------
-------
-------
-------
-You have 10 more attempts to guess
-Nov 08, 2022 1:58:44 PM server.Server start
+You have 50 more attempts to guess
+Nov 09, 2022 1:18:22 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:44 PM server.Server start
-INFO: Sending message: POINT (4.743824287825442;5.9952394035997365) DOES NOT EXIST
+Nov 09, 2022 1:18:22 AM server.Server start
+INFO: Sending message: POINT (4.333531352787702;1.080578453863029) DOES NOT EXIST
+--#---
+----#-
+-*-*--
+-----#
+#-----
 ------
-------
-------
-------
-------
-------
-You have 9 more attempts to guess
-Nov 08, 2022 1:58:45 PM server.Server start
+You have 49 more attempts to guess
+Nov 09, 2022 1:18:22 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:45 PM server.Server start
-INFO: Sending message: POINT (3.0282018533281256;3.990711169793643) EXIST
-------
-------
-------
----*--
-------
-------
-You have 8 more attempts to guess
-Nov 08, 2022 1:58:49 PM server.Server start
+Nov 09, 2022 1:18:22 AM server.Server start
+INFO: Sending message: POINT (1.725308895462116;5.972780447702015) DOES NOT EXIST
+--#---
+----#-
+-*-*--
+-----#
+#-----
+-#----
+You have 48 more attempts to guess
+Nov 09, 2022 1:18:23 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:49 PM server.Server start
-INFO: Sending message: POINT (4.746317752293363;2.50495049607689) DOES NOT EXIST
-------
-------
-------
----*--
-------
-------
-You have 7 more attempts to guess
-Nov 08, 2022 1:58:50 PM server.Server start
+Nov 09, 2022 1:18:23 AM server.Server start
+INFO: Sending message: POINT (3.0289613046217294;1.4912328613308008) DOES NOT EXIST
+--#---
+---##-
+-*-*--
+-----#
+#-----
+-#----
+You have 47 more attempts to guess
+Nov 09, 2022 1:18:24 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:50 PM server.Server start
-INFO: Sending message: POINT (3.4884512101224603;0.7314877881163924) DOES NOT EXIST
-------
-------
-------
----*--
-------
-------
-You have 6 more attempts to guess
-Nov 08, 2022 1:58:52 PM server.Server start
+Nov 09, 2022 1:18:24 AM server.Server start
+INFO: Sending message: POINT (0.850948258473718;0.044506592891300656) DOES NOT EXIST
+#-#---
+---##-
+-*-*--
+-----#
+#-----
+-#----
+You have 46 more attempts to guess
+Nov 09, 2022 1:18:25 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:52 PM server.Server start
-INFO: Sending message: POINT (3.536568822799013;0.7635539686801514) DOES NOT EXIST
-------
-------
-------
----*--
-------
-------
-You have 5 more attempts to guess
-Nov 08, 2022 1:58:52 PM server.Server start
+Nov 09, 2022 1:18:25 AM server.Server start
+INFO: Sending message: POINT (3.700846085908375;4.7825555681833) DOES NOT EXIST
+#-#---
+---##-
+-*-*--
+-----#
+#--#--
+-#----
+You have 45 more attempts to guess
+Nov 09, 2022 1:18:26 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:52 PM server.Server start
-INFO: Sending message: POINT (3.562515333821214;2.557596814365704) EXIST
-------
-------
----*--
----*--
-------
-------
-You have 4 more attempts to guess
-Nov 08, 2022 1:58:53 PM server.Server start
+Nov 09, 2022 1:18:26 AM server.Server start
+INFO: Sending message: POINT (1.75856764549448;0.6488784208563831) DOES NOT EXIST
+###---
+---##-
+-*-*--
+-----#
+#--#--
+-#----
+You have 44 more attempts to guess
+Nov 09, 2022 1:18:26 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:53 PM server.Server start
-INFO: Sending message: POINT (5.340638621795645;5.9270458913889845) DOES NOT EXIST
-------
-------
----*--
----*--
-------
-------
-You have 3 more attempts to guess
-Nov 08, 2022 1:58:58 PM server.Server start
+Nov 09, 2022 1:18:26 AM server.Server start
+INFO: Sending message: POINT (4.948798395488299;5.723961523484455) DOES NOT EXIST
+###---
+---##-
+-*-*--
+-----#
+#--#--
+-#--#-
+You have 43 more attempts to guess
+Nov 09, 2022 1:18:27 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:58 PM server.Server start
-INFO: Sending message: POINT (4.133878048090198;0.8773571285568251) DOES NOT EXIST
-------
-------
----*--
----*--
-------
-------
-You have 2 more attempts to guess
-Nov 08, 2022 1:58:59 PM server.Server start
+Nov 09, 2022 1:18:27 AM server.Server start
+INFO: Sending message: POINT (0.15995479274455526;5.108399643090649) DOES NOT EXIST
+###---
+---##-
+-*-*--
+-----#
+#--#--
+##--#-
+You have 42 more attempts to guess
+Nov 09, 2022 1:18:28 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:58:59 PM server.Server start
-INFO: Sending message: POINT (5.655653002118025;4.011913033203231) DOES NOT EXIST
-------
-------
----*--
----*--
-------
-------
-You have 1 more attempts to guess
-Nov 08, 2022 1:59:00 PM server.Server start
+Nov 09, 2022 1:18:28 AM server.Server start
+INFO: Sending message: POINT (1.3817816141847987;4.526570681147423) DOES NOT EXIST
+###---
+---##-
+-*-*--
+-----#
+##-#--
+##--#-
+You have 41 more attempts to guess
+Nov 09, 2022 1:18:29 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:59:00 PM server.Server start
-INFO: Sending message: POINT (3.921533677708701;2.7695620153788987) EXIST
-------
-------
----*--
----*--
-------
-------
-You have 0 more attempts to guess
-Nov 08, 2022 1:59:01 PM server.Server start
+Nov 09, 2022 1:18:29 AM server.Server start
+INFO: Sending message: POINT (2.9335578944258707;3.4979573430852606) EXIST
+###---
+---##-
+-*-*--
+--*--#
+##-#--
+##--#-
+You have 40 more attempts to guess
+Nov 09, 2022 1:18:30 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:59:01 PM server.Server start
-INFO: Sending message: You have no attempts left. "start-guessing" to begin guessing again
-Nov 08, 2022 1:59:02 PM server.Server start
+Nov 09, 2022 1:18:30 AM server.Server start
+INFO: Sending message: POINT (5.172896098478192;5.844435816794075) DOES NOT EXIST
+###---
+---##-
+-*-*--
+--*--#
+##-#--
+##--##
+You have 39 more attempts to guess
+Nov 09, 2022 1:18:30 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:59:02 PM server.Server start
-INFO: Sending message: You have no attempts left. "start-guessing" to begin guessing again
-Nov 08, 2022 1:59:03 PM server.Server start
+Nov 09, 2022 1:18:30 AM server.Server start
+INFO: Sending message: POINT (5.943660715871479;2.086345978862063) DOES NOT EXIST
+###---
+---##-
+-*-*-#
+--*--#
+##-#--
+##--##
+You have 38 more attempts to guess
+Nov 09, 2022 1:18:32 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:59:03 PM server.Server start
-INFO: Sending message: You have no attempts left. "start-guessing" to begin guessing again
-Nov 08, 2022 1:59:04 PM server.Server start
+Nov 09, 2022 1:18:32 AM server.Server start
+INFO: Sending message: POINT (5.50977530254772;1.0806933215699253) DOES NOT EXIST
+###---
+---###
+-*-*-#
+--*--#
+##-#--
+##--##
+You have 37 more attempts to guess
+Nov 09, 2022 1:18:33 AM server.Server start
 INFO: Received message: monte-guess
-Nov 08, 2022 1:59:04 PM server.Server start
-INFO: Sending message: You have no attempts left. "start-guessing" to begin guessing again
+Nov 09, 2022 1:18:33 AM server.Server start
+INFO: Sending message: POINT (4.108926516361768;3.9919605053831577) EXIST
+###---
+---###
+-*-*-#
+--*-*#
+##-#--
+##--##
+You have 36 more attempts to guess
+Nov 09, 2022 1:18:36 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:18:36 AM server.Server start
+INFO: Sending message: POINT (5.917252404909521;0.39431999291834274) DOES NOT EXIST
+###--#
+---###
+-*-*-#
+--*-*#
+##-#--
+##--##
+You have 35 more attempts to guess
+Nov 09, 2022 1:18:39 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:18:39 AM server.Server start
+INFO: Sending message: POINT (4.718198033824553;0.25802387413945027) DOES NOT EXIST
+###-##
+---###
+-*-*-#
+--*-*#
+##-#--
+##--##
+You have 34 more attempts to guess
+Nov 09, 2022 1:18:43 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:18:43 AM server.Server start
+INFO: Sending message: POINT (2.9719274279336534;2.608624450682895) EXIST
+###-##
+---###
+-***-#
+--*-*#
+##-#--
+##--##
+You have 33 more attempts to guess
+Nov 09, 2022 1:18:48 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:18:48 AM server.Server start
+INFO: Sending message: POINT (1.812709579523047;1.8696172179274777) EXIST
+###-##
+-*-###
+-***-#
+--*-*#
+##-#--
+##--##
+You have 32 more attempts to guess
+Nov 09, 2022 1:18:59 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:18:59 AM server.Server start
+INFO: Sending message: POINT (3.4180967005160685;5.957916931683018) DOES NOT EXIST
+###-##
+-*-###
+-***-#
+--*-*#
+##-#--
+##-###
+You have 31 more attempts to guess
+Nov 09, 2022 1:19:08 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:08 AM server.Server start
+INFO: Sending message: POINT (3.179839306873328;0.4826578358897402) DOES NOT EXIST
+######
+-*-###
+-***-#
+--*-*#
+##-#--
+##-###
+You have 30 more attempts to guess
+Nov 09, 2022 1:19:09 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:09 AM server.Server start
+INFO: Sending message: POINT (1.2233367502043928;3.4191100864044017) EXIST
+######
+-*-###
+-***-#
+-**-*#
+##-#--
+##-###
+You have 29 more attempts to guess
+Nov 09, 2022 1:19:10 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:10 AM server.Server start
+INFO: Sending message: POINT (2.848607665355825;5.537514866419035) DOES NOT EXIST
+######
+-*-###
+-***-#
+-**-*#
+##-#--
+######
+You have 28 more attempts to guess
+Nov 09, 2022 1:19:11 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:11 AM server.Server start
+INFO: Sending message: POINT (2.470137638034094;1.8461072750336387) EXIST
+######
+-**###
+-***-#
+-**-*#
+##-#--
+######
+You have 27 more attempts to guess
+Nov 09, 2022 1:19:13 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:13 AM server.Server start
+INFO: Sending message: POINT (4.8584279036815365;4.35974758097165) DOES NOT EXIST
+######
+-**###
+-***-#
+-**-*#
+##-##-
+######
+You have 26 more attempts to guess
+Nov 09, 2022 1:19:14 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:14 AM server.Server start
+INFO: Sending message: POINT (4.584678360264628;2.935227916654972) DOES NOT EXIST
+######
+-**###
+-***##
+-**-*#
+##-##-
+######
+You have 25 more attempts to guess
+Nov 09, 2022 1:19:15 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:15 AM server.Server start
+INFO: Sending message: POINT (0.45567688317692;2.3087093467268263) DOES NOT EXIST
+######
+-**###
+#***##
+-**-*#
+##-##-
+######
+You have 24 more attempts to guess
+Nov 09, 2022 1:19:17 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:17 AM server.Server start
+INFO: Sending message: POINT (3.209198914189161;3.104755388418262) EXIST
+######
+-**###
+#***##
+-****#
+##-##-
+######
+You have 23 more attempts to guess
+Nov 09, 2022 1:19:18 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:18 AM server.Server start
+INFO: Sending message: POINT (5.727386883286356;4.668433032135548) DOES NOT EXIST
+######
+-**###
+#***##
+-****#
+##-###
+######
+You have 22 more attempts to guess
+Nov 09, 2022 1:19:19 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:19 AM server.Server start
+INFO: Sending message: POINT (0.3741544973063644;3.854096258389803) DOES NOT EXIST
+######
+-**###
+#***##
+#****#
+##-###
+######
+You have 21 more attempts to guess
+Nov 09, 2022 1:19:20 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:20 AM server.Server start
+INFO: Sending message: POINT (0.325137199302693;1.5655572847540111) DOES NOT EXIST
+######
+#**###
+#***##
+#****#
+##-###
+######
+You have 20 more attempts to guess
+Nov 09, 2022 1:19:21 AM server.Server start
+INFO: Received message: monte-guess
+Nov 09, 2022 1:19:21 AM server.Server start
+INFO: Sending message: POINT (2.5209701642074327;4.0548662866400385) DOES NOT EXIST
+######
+#**###
+#***##
+#****#
+######
+######
+You have 19 more attempts to guess
+Nov 09, 2022 1:19:24 AM server.Server start
+INFO: Received message: monte-guess

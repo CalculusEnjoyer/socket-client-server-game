@@ -1,5 +1,6 @@
 package plate;
 
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -11,14 +12,14 @@ public class MonteCarloPlate {
 
   private int width;
   private int height;
-  List<List<Boolean>> table = new ArrayList<>();
+  List<List<Integer>> table = new ArrayList<>();
 
   public MonteCarloPlate(int width, int height) {
     this.width = width;
     this.height = height;
   }
 
-  public void setTable(List<List<Boolean>> table) {
+  public void setTable(List<List<Integer>> table) {
     if (table.size() != height) {
       throw new IllegalArgumentException("Invalid table height");
     }
@@ -31,9 +32,9 @@ public class MonteCarloPlate {
     this.table = table;
   }
 
-  public boolean isExist(int x, int y) {
+  public Integer isExist(int x, int y) {
     if (x > width || y > height || x < 0 || y < 0) {
-      return false;
+      return 0;
     }
     return table.get(y).get(x);
   }
@@ -41,12 +42,14 @@ public class MonteCarloPlate {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    for (List<Boolean> row : table) {
-      for (Boolean value : row) {
-        if (value == true) {
+    for (List<Integer> row : table) {
+      for (Integer value : row) {
+        if (value == 1) {
           sb.append('*');
-        } else {
+        } else if (value == 0){
           sb.append('-');
+        } else {
+          sb.append("-");
         }
       }
       sb.append('\n');

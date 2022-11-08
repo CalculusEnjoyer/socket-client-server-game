@@ -10,7 +10,7 @@ public class CommandParser {
 
   private MonteCarloPlate plate;
   private MonteCarloPlate guessingPlate;
-  public final static Integer startingAttempts = 15;
+  public final static Integer startingAttempts = 25;
   private int attemptsLeft = 0;
   public static final Pattern POINT_PATTERN = Pattern.compile(
       "[(][0-9]{1,13}(.[0-9]*)?;[0-9]{1,13}(.[0-9]*)?[)]");
@@ -75,10 +75,11 @@ public class CommandParser {
       double x = Double.parseDouble(command.substring(1, command.indexOf(';')));
       double y = Double.parseDouble(
           command.substring(command.indexOf(';') + 1, command.length() - 1));
-      if (isInExistingPointRange(x, y)) {
-        guessingPlate.getTable().get((int) Math.floor(y)).set((int) Math.floor(x), true);
+      if (isInExistingPointRange(x, y) == 1) {
+        guessingPlate.getTable().get((int) Math.floor(y)).set((int) Math.floor(x), 1);
         result.append("POINT " + command + " EXIST\n").append(guessingPlate.toString());
       } else {
+        guessingPlate.getTable().get((int) Math.floor(y)).set((int) Math.floor(x), 2);
         result.append("POINT " + command + " DOES NOT EXIST\n").append(guessingPlate.toString());
       }
       attemptsLeft--;
@@ -106,18 +107,22 @@ public class CommandParser {
     for (int i = 0; i < plate.getHeight(); i++) {
       guessingPlate.getTable().add(new ArrayList<>());
       for (int j = 0; j < plate.getHeight(); j++) {
-        guessingPlate.getTable().get(i).add(false);
+        guessingPlate.getTable().get(i).add(0);
       }
     }
   }
 
-  private boolean isInExistingPointRange(double x, double y) {
+  private Integer isInExistingPointRange(double x, double y) {
     return plate.isExist((int) Math.floor(x), (int) Math.floor(y));
   }
 
   private String generateMonteGuessCommand() {
     double x = Math.random() * getGuessingPlate().getWidth();
     double y = Math.random() * getGuessingPlate().getHeight();
+    while(guessingPlate.isExist((int) Math.floor(x), (int) Math.floor(y))!=0){
+      x = Math.random() * getGuessingPlate().getWidth();
+      y = Math.random() * getGuessingPlate().getHeight();
+    }
     return "guess (" + x + ";" + y + ")";
   }
 }

@@ -76,52 +76,52 @@ public class Server {
     MonteCarloPlate plate = new MonteCarloPlate(6, 6);
     List row1 = new ArrayList<Boolean>();
 
-    row1.add(false);
-    row1.add(false);
-    row1.add(false);
-    row1.add(false);
-    row1.add(false);
-    row1.add(false);
+    row1.add(0);
+    row1.add(0);
+    row1.add(0);
+    row1.add(0);
+    row1.add(0);
+    row1.add(0);
 
     List row2 = new ArrayList<Boolean>();
-    row2.add(false);
-    row2.add(true);
-    row2.add(true);
-    row2.add(false);
-    row2.add(false);
-    row2.add(false);
+    row2.add(0);
+    row2.add(1);
+    row2.add(1);
+    row2.add(0);
+    row2.add(0);
+    row2.add(0);
 
     List row3 = new ArrayList<Boolean>();
-    row3.add(false);
-    row3.add(true);
-    row3.add(true);
-    row3.add(true);
-    row3.add(false);
-    row3.add(false);
+    row3.add(0);
+    row3.add(1);
+    row3.add(1);
+    row3.add(1);
+    row3.add(0);
+    row3.add(0);
 
     List row4 = new ArrayList<Boolean>();
-    row4.add(false);
-    row4.add(true);
-    row4.add(true);
-    row4.add(true);
-    row4.add(true);
-    row4.add(false);
+    row4.add(0);
+    row4.add(1);
+    row4.add(1);
+    row4.add(1);
+    row4.add(1);
+    row4.add(0);
 
     List row5 = new ArrayList<Boolean>();
-    row5.add(false);
-    row5.add(false);
-    row5.add(false);
-    row5.add(false);
-    row5.add(false);
-    row5.add(false);
+    row5.add(0);
+    row5.add(0);
+    row5.add(0);
+    row5.add(0);
+    row5.add(0);
+    row5.add(0);
 
     List row6 = new ArrayList<Boolean>();
-    row6.add(false);
-    row6.add(false);
-    row6.add(false);
-    row6.add(false);
-    row6.add(false);
-    row6.add(false);
+    row6.add(0);
+    row6.add(0);
+    row6.add(0);
+    row6.add(0);
+    row6.add(0);
+    row6.add(0);
 
     List table = new ArrayList<List>();
     table.add(row1);
