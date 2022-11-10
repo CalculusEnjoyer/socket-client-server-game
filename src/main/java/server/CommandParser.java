@@ -10,10 +10,12 @@ public class CommandParser {
 
   private MonteCarloPlate plate;
   private MonteCarloPlate guessingPlate;
-  public final static Integer startingAttempts = 25;
+  public final static Integer startingAttempts = 18;
   private int attemptsLeft = 0;
   public static final Pattern POINT_PATTERN = Pattern.compile(
       "[(][0-9]{1,13}(.[0-9]*)?;[0-9]{1,13}(.[0-9]*)?[)]");
+
+  public static final String COMMAND_DEMILITAR = " ";
 
   public static final String WHO = "Volodymyr Kravchuk, group K-26, variant #27 "
       + "(guessing points on the place using Monte Carlo method)";
@@ -28,7 +30,7 @@ public class CommandParser {
           + "start-guessing\n"
           + "\tStarts guessing of points that are stored on server\n"
           + "guess (x;y)\n"
-          + "\tGuesses if poit x;y (where x and y are doubles or integers) is stored of server and \n"
+          + "\tGuesses if point x;y (where x and y are doubles or integers) is stored of server and \n"
           + "\treturn plate of already guessed points.\n"
           + "monte-guess\n"
           + "\tRandomly generates point to guess\n"
@@ -54,7 +56,8 @@ public class CommandParser {
   }
 
   public String parseCommand(String command) {
-    return switch ((command + ' ').substring(0, (command + ' ').indexOf(' '))) {
+    return switch ((command + COMMAND_DEMILITAR).substring(0,
+        (command + COMMAND_DEMILITAR).indexOf(COMMAND_DEMILITAR))) {
       case "who" -> WHO;
       case "help" -> HELP;
       case "start-guessing" -> startGuessingCommand();
@@ -66,7 +69,7 @@ public class CommandParser {
   }
 
   private String guessCommandParser(String command) {
-    command = command.substring(command.indexOf(' ') + 1);
+    command = command.substring(command.indexOf(COMMAND_DEMILITAR) + 1);
     if (POINT_PATTERN.matcher(command).matches()) {
       if (attemptsLeft <= 0) {
         return "You have no attempts left. \"start-guessing\" to begin guessing again";
@@ -119,7 +122,7 @@ public class CommandParser {
   private String generateMonteGuessCommand() {
     double x = Math.random() * getGuessingPlate().getWidth();
     double y = Math.random() * getGuessingPlate().getHeight();
-    while(guessingPlate.isExist((int) Math.floor(x), (int) Math.floor(y))!=0){
+    while (guessingPlate.isExist((int) Math.floor(x), (int) Math.floor(y)) != 0) {
       x = Math.random() * getGuessingPlate().getWidth();
       y = Math.random() * getGuessingPlate().getHeight();
     }
